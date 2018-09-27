@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class ZuulPreFilter extends ZuulFilter {
 
-    private static Logger log = LoggerFactory.getLogger(ZuulPreFilter.class);
+    private static Logger log = LoggerFactory.getLogger("INPUT_OUTPUT_TEST");
+
 //    private static Logger log = LoggerFactory.getLogger("jsonLogger");
 
     @Override
@@ -37,8 +38,7 @@ public class ZuulPreFilter extends ZuulFilter {
 
         HttpServletRequest request = ctx.getRequest();
 
-//        log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-        log.info("Debug message");
+        log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
         return null;
     }
 }
